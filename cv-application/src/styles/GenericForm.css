@@ -1,0 +1,33 @@
+.form-container {
+  display: flex;
+  margin-top: 7px;
+  margin-right: 7px;
+}
+
+.form-label {
+  display: flex;
+  flex: 1;
+  font-weight: bold;
+  font-size: 15px;
+  margin-left: 5px;
+}
+
+.form-input {
+  flex: 1; /* Ocupa todo o espaço disponível restante */
+  margin-left: 10px; /* Espaçamento entre o label e o input */
+  margin-bottom: 5px;
+  padding: 5px;
+  width: 300px;
+}
+
+.form-button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+.form-button:hover {
+  background-color: #0056b3;
+}

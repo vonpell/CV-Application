@@ -1,0 +1,11 @@
+.genericHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 5px;
+    background-color: #f7eb4c;    
+    height: 30px;
+    width: 98%;       
+    font-size: 8px;
+    border-radius: 5px;
+}
