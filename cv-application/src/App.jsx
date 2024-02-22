@@ -22,7 +22,25 @@ function App() {
             </div>
           </div>
         </div>
-        <div className="lower-side">Hello Wéld</div>
+
+        <div className="lower-side">
+          <div className="lower-left">
+            <h2>
+              <i>GENERAL INFORMATION</i>
+            </h2>
+          </div>
+          <div className="lower-middle">
+            <h2>
+              <i>EDUCATIONAL INFORMATION</i>
+            </h2>
+          </div>
+
+          <div className="lower-right">
+            <h2>
+              <i>PROFESSIONAL INFORMATION</i>
+            </h2>
+          </div>
+        </div>
       </div>
     </>
   );

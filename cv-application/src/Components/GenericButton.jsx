@@ -1,8 +1,9 @@
 import React from 'react';
+import '../../Styles/GenericButton.css';
 
 const Button = ({ text, onClick }) => {
     return (
-        <button onClick={onClick}>
+        <button className="genericButton" onClick={onClick}>
             {text}
         </button>
     );

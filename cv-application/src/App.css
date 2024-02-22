@@ -1,13 +1,13 @@
 .container {
   display: flexbox;
-  height: 810px;
+  height: 830px;
   width: 1520px;
 }
 .upper-side {
   margin-left: 20px;
   margin-bottom: 5px;
-  padding: 10px;
-  height: 35%;
+  padding: 7px;
+  height: 42%;
   width: 100%;
   border: 4px solid #000;
   border-radius: 10px;
@@ -17,9 +17,9 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  margin-top: 3px;
+  margin-top: 5px;
   height: 71%;
-  width: 100%;  
+  width: 100%;
 }
 
 .general-info {
@@ -44,10 +44,33 @@
 }
 
 .lower-side {
-  padding: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 7px;
   height: 70%;
   width: 100%;
   margin-left: 20px;
   border: 4px solid #000;
   border-radius: 10px;
+}
+
+.lower-side h2 {
+  text-align: left;
+  margin-left: 10px;
+}
+
+.lower-left {
+  height: 99%;
+  width: 32%;
+}
+
+.lower-middle {
+  height: 99%;
+  width: 32%;
+}
+
+.lower-right {
+  height: 99%;
+  width: 32%;
 }
