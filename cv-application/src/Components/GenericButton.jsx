@@ -1,5 +1,5 @@
 import React from 'react';
-import '../../Styles/GenericButton.css';
+import '../styles/GenericButton.css';
 
 const Button = ({ text, onClick }) => {
     return (

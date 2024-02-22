@@ -1,21 +1,23 @@
-import '../../Styles/CVEducation.css';
-import React from 'react';
-import { EducationContext } from './Education';
+import "../../Styles/CVEducation.css";
+import React, { useContext } from "react";
+import { EducationContext } from "../Information/Education";
 
 const CVEducation = () => {
-  return (
-    <EducationContext.Consumer>
-      {({ educationData }) => (
-        <div className="education-container">
-          <h2>Education</h2>
-          <p>{educationData.schoolName}</p>
-          <p>{educationData.degree}</p>
-          <p>{educationData.startDate}</p>
-          <p>{educationData.endDate}</p>
+  const { educationData } = useContext(EducationContext);
+
+    return (
+        <div>
+            <h3>Education</h3>
+            {educationData.map((education, index) => (
+            <div key={index}>
+                <h4>{education.schoolName}</h4>
+                <p>{education.degree}</p>
+                <p>{education.startDate} - {education.endDate}</p>
+            </div>
+            ))}
         </div>
-      )}
-    </EducationContext.Consumer>
-  );
-};
+        );
+}
 
 export default CVEducation;
+  

@@ -3,7 +3,6 @@ import GenericForm from "../GenericForm";
 import GenericHeader from "../GenericHeader";
 import Button from "../GenericButton";
 
-// Criar um contexto
 export const EducationContext = createContext();
 
 const Education = () => {

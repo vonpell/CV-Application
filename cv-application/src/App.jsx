@@ -1,10 +1,14 @@
 import "./App.css";
 import Header from "./Components/Header";
 import GeneralInformation from "./Components/Information/GeneralInformation";
-import Education from "./Components/Information/Education";
+import Education, {
+  EducationContext,
+} from "./Components/Information/Education";
 import ProfessionalExperience from "./Components/Information/ProfessionalExperience";
+import CVEducation from "./Components/Generate-CV/CVEducation";
+import { useState } from "react";
 
-function App() {
+function App() {  
   return (
     <>
       <div className="container">
@@ -33,8 +37,8 @@ function App() {
             <h2>
               <i>EDUCATIONAL INFORMATION</i>
             </h2>
+            <CVEducation />
           </div>
-
           <div className="lower-right">
             <h2>
               <i>PROFESSIONAL INFORMATION</i>
