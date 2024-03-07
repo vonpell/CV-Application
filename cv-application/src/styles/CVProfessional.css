@@ -1,0 +1,15 @@
+.cvpro{
+    padding: 10px;
+}
+.cvpro p {
+    margin-left: 15px;
+    padding: 0;        
+    color: #333;
+    text-align: left;
+    text-transform: capitalize;    
+}
+
+.break {
+    margin-left: 15px;
+    padding: 0;        
+}

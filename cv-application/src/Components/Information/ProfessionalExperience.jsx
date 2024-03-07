@@ -1,17 +1,21 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import GenericForm from "../GenericForm";
 import GenericHeader from "../GenericHeader";
+import Button from "../GenericButton";
+import { ProfessionalExpContext } from "../ContextProvider/ProfessionalExpContextProvider";
+import "../../styles/ProfessionalExperience.css";
 
-function ProfessionalExperience() {
-  const [company, setCompany] = useState("");
-  const [position, setPosition] = useState("");
-  const [tasks, setTasks] = useState("");
-  const [startDate, setStartDate] = useState("");
-  const [endDate, setEndDate] = useState("");
+const ProfessionalExperience = () => {
+  const {
+    professionalExpData,
+    index,
+    editProfessionalExp,
+    addProfessionalExp,
+  } = useContext(ProfessionalExpContext);  
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(company, position, tasks, startDate, endDate);
+    addProfessionalExp();
   };
 
   return (
@@ -20,35 +24,45 @@ function ProfessionalExperience() {
       <GenericForm
         submitHandler={handleSubmit}
         label="Company:"
-        value={company}
-        onChange={(e) => setCompany(e.target.value)}
+        type="text"
+        value={professionalExpData[index]?.company || ""}
+        onChange={(e) => editProfessionalExp("company", e.target.value)}
       />
       <GenericForm
         submitHandler={handleSubmit}
         label="Position:"
-        value={position}
-        onChange={(e) => setPosition(e.target.value)}
+        type="text"
+        value={professionalExpData[index]?.position || ""}
+        onChange={(e) => editProfessionalExp("position", e.target.value)}
       />
       <GenericForm
         submitHandler={handleSubmit}
-        label="Tasks:"
-        value={tasks}
-        onChange={(e) => setTasks(e.target.value)}
+        label="Summary:"
+        type="text"
+        value={professionalExpData[index]?.summary || ""}
+        onChange={(e) => editProfessionalExp("summary", e.target.value)}
       />
       <GenericForm
         submitHandler={handleSubmit}
         label="Start Date:"
-        value={startDate}
-        onChange={(e) => setStartDate(e.target.value)}
+        type="date"
+        value={professionalExpData[index]?.startDate || ""}
+        onChange={(e) => editProfessionalExp("startDate", e.target.value)}
       />
       <GenericForm
         submitHandler={handleSubmit}
         label="End Date:"
-        value={endDate}
-        onChange={(e) => setEndDate(e.target.value)}
+        type="date"
+        value={professionalExpData.endDate}
+        onChange={(e) => editProfessionalExp("endDate", e.target.value)}
+      />
+      <Button
+        className={"buttonProfessional"}
+        text="Add Professional Experience"
+        onClick={handleSubmit}
       />
     </div>
   );
-}
+};
 
 export default ProfessionalExperience;

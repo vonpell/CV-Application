@@ -1,0 +1,15 @@
+.cvedu{
+    padding: 10px;
+}
+.cvedu p {
+    margin-left: 15px;
+    padding: 0;        
+    color: #333;
+    text-align: left;
+    text-transform: capitalize;    
+}
+
+.break {
+    margin-left: 15px;
+    padding: 0;        
+}

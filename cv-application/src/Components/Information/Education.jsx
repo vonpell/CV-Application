@@ -1,56 +1,48 @@
-import React, { useState, createContext } from "react";
+import React, { useContext } from "react";
 import GenericForm from "../GenericForm";
 import GenericHeader from "../GenericHeader";
 import Button from "../GenericButton";
-
-export const EducationContext = createContext();
+import { EducationContext } from "../ContextProvider/EducationalInfoContextProvider";
+import "../../styles/Education.css"; 
 
 const Education = () => {
-  const [educationData, setEducationData] = useState([{}]);
-  const [index, setIndex] = useState(0);
+  const { educationData, addEducation, editEducation, index } =
+    useContext(EducationContext);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setIndex(index + 1);
-    setEducationData([...educationData, {}]);
-  };
-
-  const handleChange = (field, value) => {
-    const newEducationData = [...educationData];
-    newEducationData[index][field] = value;
-    setEducationData(newEducationData);
+    addEducation();
   };
 
   return (
-    <EducationContext.Provider value={{ educationData, setEducationData }}>
-      <div>
-        <GenericHeader title="Education" />
-        <GenericForm
-          label="School Name:"
-          value={educationData[index].schoolName || ""}
-          onChange={(e) => handleChange("schoolName", e.target.value)}
-        />
-        <GenericForm
-          label="Degree:"
-          value={educationData[index].degree || ""}
-          onChange={(e) => handleChange("degree", e.target.value)}
-        />
-        <GenericForm
-          label="Start Date:"
-          value={educationData[index].startDate || ""}
-          onChange={(e) => handleChange("startDate", e.target.value)}
-        />
-        <GenericForm
-          label="End Date:"
-          value={educationData[index].endDate || ""}
-          onChange={(e) => handleChange("endDate", e.target.value)}
-        />
-        <Button 
-          text="Add Education"
-          onClick={handleSubmit}
-        />
-      </div>
-    </EducationContext.Provider>
+    <div >
+      <GenericHeader title="Education" />
+      <GenericForm
+        label="School Name:"
+        type="text"
+        value={educationData[index]?.schoolName || ""}
+        onChange={(e) => editEducation("schoolName", e.target.value)}
+      />
+      <GenericForm
+        label="Degree:"
+        type="text"
+        value={educationData[index]?.degree || ""}
+        onChange={(e) => editEducation("degree", e.target.value)}
+      />
+      <GenericForm
+        label="Start Date:"
+        type="date"
+        value={educationData[index]?.startDate || ""}
+        onChange={(e) => editEducation("startDate", e.target.value)}
+      />
+      <GenericForm
+        label="End Date:"
+        type="date"
+        value={educationData[index]?.endDate || ""}
+        onChange={(e) => editEducation("endDate", e.target.value)}
+      />
+      <Button className={"button"} text="Add Education" onClick={handleSubmit} />
+    </div>
   );
 };
 

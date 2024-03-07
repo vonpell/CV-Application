@@ -1,16 +1,13 @@
-import React, { useState } from "react";
+import React, { useContext } from "react";
 import GenericForm from "../GenericForm";
 import GenericHeader from "../GenericHeader";
+import { GeneralInfoContext } from "../ContextProvider/GeneralInfoContextProvider";
 
-function GeneralInformation() {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [phone, setPhone] = useState("");
-  const [gitHub, setGitHub] = useState("");
+const GeneralInformation = () => {
+  const { generalInfo, editGeneralInfo } = useContext(GeneralInfoContext);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(name, email, phone, gitHub);
   };
 
   return (
@@ -19,29 +16,40 @@ function GeneralInformation() {
       <GenericForm
         submitHandler={handleSubmit}
         label="Name:"
-        value={name}
-        onChange={(e) => setName(e.target.value)}
+        type="text"
+        value={generalInfo.name || ""}
+        onChange={(e) => editGeneralInfo("name", e.target.value)}
       />
       <GenericForm
         submitHandler={handleSubmit}
         label="Email:"
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
+        type={"email"}
+        value={generalInfo.email || ""}
+        onChange={(e) => editGeneralInfo("email", e.target.value)}
       />
       <GenericForm
         submitHandler={handleSubmit}
         label="Phone:"
-        value={phone}
-        onChange={(e) => setPhone(e.target.value)}
+        type={"text"}
+        value={generalInfo.phone || ""}
+        onChange={(e) => editGeneralInfo("phone", e.target.value)}
+      />
+      <GenericForm
+        submitHandler={handleSubmit}
+        label="State/Country:"
+        type={"text"}
+        value={generalInfo.location || ""}
+        onChange={(e) => editGeneralInfo("location", e.target.value)}
       />
       <GenericForm
         submitHandler={handleSubmit}
         label="GitHub:"
-        value={gitHub}
-        onChange={(e) => setGitHub(e.target.value)}
+        type={"url"}
+        value={generalInfo.github || ""}
+        onChange={(e) => editGeneralInfo("github", e.target.value)}
       />
     </div>
   );
-}
+};
 
 export default GeneralInformation;

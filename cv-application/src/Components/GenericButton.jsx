@@ -1,12 +1,12 @@
-import React from 'react';
-import '../styles/GenericButton.css';
+import React from "react";
+import "../styles/GenericButton.css";
 
-const Button = ({ text, onClick }) => {
-    return (
-        <button className="genericButton" onClick={onClick}>
-            {text}
-        </button>
-    );
+const Button = ({ text, onClick, className }) => {
+  return (
+    <button className={className ?? "genericButton"} onClick={onClick}>
+      {text}
+    </button>
+  );
 };
 
 export default Button;

@@ -1,0 +1,14 @@
+.cvgeneral p {
+    margin-left: 15px;
+    padding: 0;        
+    color: #333;
+    text-align: left;
+    text-transform: capitalize;  
+}
+
+.cvgeneral url {
+    margin-left: 15px;
+    padding: 0;        
+    color: #333;
+    text-align: left;
+}

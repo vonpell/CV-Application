@@ -1,15 +1,16 @@
 import "../styles/GenericForm.css";
 
-function GenericForm({ submitHandler, label, value, onChange }) {
+function GenericForm({ submitHandler, label, type, value, onChange }) {
   return (
     <form className="form-container" onSubmit={submitHandler}>
       <label className="form-label">
         {label}
         <input
           className="form-input"
-          type="text"
+          type={type}
           value={value}
           onChange={onChange}
+          required={true}
         />
       </label>
       <br />
