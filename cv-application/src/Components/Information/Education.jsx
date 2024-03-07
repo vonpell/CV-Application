@@ -3,7 +3,7 @@ import GenericForm from "../GenericForm";
 import GenericHeader from "../GenericHeader";
 import Button from "../GenericButton";
 import { EducationContext } from "../ContextProvider/EducationalInfoContextProvider";
-import "../../styles/Education.css"; 
+import "../../Styles/Education.css"; 
 
 const Education = () => {
   const { educationData, addEducation, editEducation, index } =

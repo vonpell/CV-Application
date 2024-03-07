@@ -1,4 +1,4 @@
-import '../styles/GenericHeader.css'
+import '../Styles/GenericHeader.css'
 
 function GenericHeader({ title }) {
   return (

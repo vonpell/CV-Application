@@ -3,7 +3,7 @@ import GenericForm from "../GenericForm";
 import GenericHeader from "../GenericHeader";
 import Button from "../GenericButton";
 import { ProfessionalExpContext } from "../ContextProvider/ProfessionalExpContextProvider";
-import "../../styles/ProfessionalExperience.css";
+import "../../Styles/ProfessionalExperience.css";
 
 const ProfessionalExperience = () => {
   const {

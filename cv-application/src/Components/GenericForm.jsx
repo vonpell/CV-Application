@@ -1,4 +1,4 @@
-import "../styles/GenericForm.css";
+import "../Styles/GenericForm.css";
 
 function GenericForm({ submitHandler, label, type, value, onChange }) {
   return (
